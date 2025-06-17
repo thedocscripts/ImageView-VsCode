@@ -2,15 +2,32 @@
   "name": "imageview",
   "displayName": "imageview",
   "description": "Image Viewer on Hover over code",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "publisher": "thedoc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thedocscripts/ImageView-VsCode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thedocscripts/ImageView-VsCode/issues"
+  },
+  "homepage": "https://github.com/thedocscripts/ImageView-VsCode#readme",
   "engines": {
     "vscode": "^1.101.0"
   },
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "activationEvents": [
     "onLanguage:javascript",
+    "onLanguage:typescript",
     "onLanguage:html",
+    "onLanguage:css",
+    "onLanguage:scss",
+    "onLanguage:less",
+    "onLanguage:json",
     "onLanguage:markdown",
+    "onLanguage:xml",
     "onStartupFinished"
   ],
   "main": "./extension.js",
@@ -18,8 +35,85 @@
     "languages": [
       {
         "id": "javascript",
-        "extensions": [".js"],
-        "aliases": ["JavaScript"]
+        "extensions": [
+          ".js"
+        ],
+        "aliases": [
+          "JavaScript"
+        ]
+      },
+      {
+        "id": "typescript",
+        "extensions": [
+          ".ts"
+        ],
+        "aliases": [
+          "TypeScript"
+        ]
+      },
+      {
+        "id": "html",
+        "extensions": [
+          ".html",
+          ".htm"
+        ],
+        "aliases": [
+          "HTML"
+        ]
+      },
+      {
+        "id": "css",
+        "extensions": [
+          ".css"
+        ],
+        "aliases": [
+          "CSS"
+        ]
+      },
+      {
+        "id": "scss",
+        "extensions": [
+          ".scss"
+        ],
+        "aliases": [
+          "SCSS"
+        ]
+      },
+      {
+        "id": "less",
+        "extensions": [
+          ".less"
+        ],
+        "aliases": [
+          "Less"
+        ]
+      },
+      {
+        "id": "json",
+        "extensions": [
+          ".json"
+        ],
+        "aliases": [
+          "JSON"
+        ]
+      },
+      {
+        "id": "markdown",
+        "extensions": [
+          ".md"
+        ],
+        "aliases": [
+          "Markdown"
+        ]
+      },
+      {
+        "id": "xml",
+        "extensions": [
+          ".xml"
+        ],
+        "aliases": [
+          "XML"
+        ]
       }
     ],
     "commands": [
@@ -35,27 +129,25 @@
         "command": "vscode.open",
         "title": "Open File"
       }
-    ],"viewsContainers": {
-  "activitybar": [
-    {
-      "id": "imageview-sidebar",
-      "title": "ImageView",
-      "icon": "media/icon.png"
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "imageview-sidebar",
+          "title": "ImageView",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "imageview-sidebar": [
+        {
+          "type": "webview",
+          "id": "imageLibraryPanel",
+          "name": "Image Library"
+        }
+      ]
     }
-  ]
-},
-"views": {
-  "imageview-sidebar": [
-    {
-      "type": "webview",
-      "id": "imageLibraryPanel",
-      "name": "Image Library"
-    }
-  ]
-}
-
-
-    
   },
   "scripts": {
     "lint": "eslint .",
